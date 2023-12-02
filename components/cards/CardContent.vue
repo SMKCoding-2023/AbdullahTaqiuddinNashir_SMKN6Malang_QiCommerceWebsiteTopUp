@@ -10,6 +10,8 @@ const { baseStorageUrl } = useAppConfig();
 </script>
 
 <template>
+    {{ props.product.nama }}
+    <!--<h1 class="font-serif text-2xl font-bold text-white shadow-xl">{{ props.product.category }}</h1>
     <div class="container">
     <div class="da relative flex-col justify-top overflow-hidden">
       <div class="group relative m-0 flex h-40 w-50 rounded-xl shadow-xl  sm:mx-auto sm:max-w-lg">
@@ -21,15 +23,15 @@ const { baseStorageUrl } = useAppConfig();
           />
         </div>
         <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 w-full transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-          <NuxtLink :to="`/product/${props.product.id}`">
-            <h3 class="text-white font-bold mb-4 text-limit limit-2">{{ props.product.name }}</h3>
+          <NuxtLink :to="`/product/content/${props.product.id}`">
+            <h3 class="text-white font-bold mb-4 text-limit limit-2">{{ props.product.nama }}</h3>
           </NuxtLink>
           <h1 class="font-serif text-2xl font-bold text-white shadow-xl">{{ props.product.category }}</h1>
-          <h1 class="text-sm font-light text-gray-200 shadow-xl">{{ props.product.stok }} stok</h1>
+          <h1 class="text-sm font-light text-gray-200 shadow-xl">Rp.{{ props.product.harga }}</h1>
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
    <!--<section class="bg-white shadow-xl rounded-xl overflow-hidden">
    <div :class="`w-full h-[200px] p-5 bg-gray-300`">
       <img :src="baseStorageUrl + props.product.image" class="w-full h-full object-contain"/>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useProductsStore } from "~/stores/products";
+import { productsStore } from "~/stores/products";
 
-const productStore = useProductsStore();
+const productStore = productsStore();
 const allProducts = ref([]);
 
 productStore.getAllProducts().then(() => {
@@ -32,6 +32,7 @@ const selectedCategory = ref("");
                 :product="item"
                 class="w-[calc(100%/4-18px)]"
               />
+
             </template>
             <template v-else>
               <p class="text-center text-lg font-light w-full">No products in this category.</p>

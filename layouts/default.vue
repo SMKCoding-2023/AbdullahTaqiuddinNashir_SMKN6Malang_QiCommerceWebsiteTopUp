@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="bg-pink-900">
         <Header />
         <slot />
         <Footer /> 

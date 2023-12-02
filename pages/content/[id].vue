@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { products } from '~/composables/constants/products';
-import { productsStore } from '~/stores/products';
+import { contentStore } from '~/stores/content';
 
 const useProductStore = productsStore();
 const splitPath = useRoute().path.split("/");

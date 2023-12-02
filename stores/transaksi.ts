@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const productsStore = defineStore("products", {
+export const transaksiStore = defineStore("transaksi", {
   state: () => ({
     products: {} as any,
     status: false,
@@ -8,10 +8,10 @@ export const productsStore = defineStore("products", {
     oneProduct: {} as any,
   }),
   actions: {
-    async getAllProducts(){
+    async getAllTransaksi(){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const {data, error} = await useFetch("/rest/v1/products", {
+        const {data, error} = await useFetch("/rest/v1/transaksi", {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -32,10 +32,10 @@ export const productsStore = defineStore("products", {
         console.error(error);
       }
     },
-    async createProduct(payload: any){
+    async createTransaksi(payload: any){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const {data, error} = await useFetch("/rest/v1/products", {
+        const {data, error} = await useFetch("/rest/v1/transaksi", {
           baseURL: baseUrl,
           method: "POST",
           headers: {
@@ -60,7 +60,7 @@ export const productsStore = defineStore("products", {
     async detailProduct(id: number){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const { data, error } = await useFetch(`rest/v1/products?id=eq.${id}`, {
+        const { data, error } = await useFetch(`rest/v1/transaksi?id=eq.${id}`, {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -84,7 +84,7 @@ export const productsStore = defineStore("products", {
     async updateProduct(payload: any, id: number){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const {data, error} = await useFetch(`rest/v1/products?id=eq.${id}`, {
+        const {data, error} = await useFetch(`rest/v1/transaksi?id=eq.${id}`, {
           baseURL: baseUrl,
           method: "PATCH",
           headers: {
@@ -110,7 +110,7 @@ export const productsStore = defineStore("products", {
     async filterByIsCart(state: boolean){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const { data, error } = await useFetch(`rest/v1/products?isCart=eq.${state}`, {
+        const { data, error } = await useFetch(`rest/v1/transaksi?isCart=eq.${state}`, {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -134,7 +134,7 @@ export const productsStore = defineStore("products", {
     async filterByCategory(category: string){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const { data, error } = await useFetch(`rest/v1/products?category=eq.${category}`, {
+        const { data, error } = await useFetch(`rest/v1/transaksi?category=eq.${category}`, {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -157,4 +157,3 @@ export const productsStore = defineStore("products", {
     }
   }
 })
-

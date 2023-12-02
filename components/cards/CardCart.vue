@@ -8,6 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
+  
   <div class="bg-white shadow-xl p-6 rounded-xl flex gap-4 items-center">
     <div class="h-[150px] w-[130px] bg-gray-300 rounded-xl p-3">
       <img :src="props.product.image" class="h-full w-full object-contain" />
@@ -27,5 +28,6 @@ const props = defineProps({
         </div>
       </div>
     </div>
+    
   </div>
 </template>

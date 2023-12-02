@@ -15,7 +15,7 @@ const { baseStorageUrl } = useAppConfig();
       <div class="group relative m-0 flex h-40 w-50 rounded-xl shadow-xl  sm:mx-auto sm:max-w-lg">
         <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
           <img
-            :src="baseStorageUrl + props.product.image"
+            :src="baseStorageUrl + props.product.gambar"
             class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
             alt=""
           />
@@ -25,7 +25,7 @@ const { baseStorageUrl } = useAppConfig();
             <h3 class="text-white font-bold mb-4 text-limit limit-2">{{ props.product.name }}</h3>
           </NuxtLink>
           <h1 class="font-serif text-2xl font-bold text-white shadow-xl">{{ props.product.category }}</h1>
-          <h1 class="text-sm font-light text-gray-200 shadow-xl">{{ props.product.stok }} stok</h1>
+          <h1 class="text-sm font-light text-gray-200 shadow-xl">{{ props.product.price }} Customer</h1>
         </div>
       </div>
     </div>

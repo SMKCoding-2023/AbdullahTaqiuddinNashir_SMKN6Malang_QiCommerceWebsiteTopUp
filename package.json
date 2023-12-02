@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@vite-pwa/nuxt": "^0.1.1",
     "nuxt": "^3.7.4",
@@ -19,6 +20,8 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
-    "pinia": "^2.1.7"
+    "flowbite": "^2.2.0",
+    "pinia": "^2.1.7",
+    "swiper": "^11.0.5"
   }
 }

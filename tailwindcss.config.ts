@@ -4,7 +4,17 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       colors: {
-        primary: "#6867C5",
+        primary: "#FCE96A",
+        transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'purple': '#3f3cbb',
+      'midnight': '#121063',
+      'metal': '#565584',
+      'tahiti': '#3ab7bf',
+      'silver': '#ecebff',
+      'bubble-gum': '#ff77e9',
+      'bermuda': '#78dcca',
       },
     },
     container: {
@@ -17,4 +27,12 @@ export default <Partial<Config>>{
       center: true,
     },
   }
+
+}
+
+module.exports = {
+  // other options ...
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }

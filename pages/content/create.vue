@@ -18,17 +18,11 @@ const { categories } = storeToRefs(categoryStore);
 categoryStore.getAllCategory();
 
 const formCreateProduct = [
-  { name: "name", label: "Nama Material", type: "text", value: "", placeholder: "Diamond - Mobile Legend", required: true },
-  { name: "description", label: "Deskripsi", type: "text", value: "", placeholder: "This shirt features a vibrant and eye-catching color and a solid pattern that will give you a happy feeling...", required: true },
-  { name: "stok", label: "Masukkan nominal Stok", type: "number", value: "", placeholder: "200", required: true },
+  { name: "name", label: "Name", type: "text", value: "", placeholder: "Men's Streetwear", required: true },
+  { name: "description", label: "Description", type: "text", value: "", placeholder: "This shirt features a vibrant and eye-catching color and a solid pattern that will give you a happy feeling...", required: true },
+  { name: "price", label: "Price", type: "number", value: "", placeholder: "$30", required: true },
   { name: "image", label: "Image", type: "file", value: {}, placeholder: "", required: true },
-  { name: "category", label: "Kategori", type: "select", value: "", placeholder: "", required: true },
-  { name: "varian1", label: "Variasi Konten 1", type: "text", value: "", placeholder: "1350 Diamond + 530 Diamond - Rp.20.000", required: true },
-  { name: "varian2", label: "Variasi Konten 2", type: "text", value: "", placeholder: "1350 Diamond + 530 Diamond - Rp.20.000", required: true },
-  { name: "varian3", label: "Variasi Konten 3", type: "text", value: "", placeholder: "1350 Diamond + 530 Diamond - Rp.20.000", required: true },
-  { name: "varian4", label: "Variasi Konten 4", type: "text", value: "", placeholder: "1350 Diamond + 530 Diamond - Rp.20.000", required: true },
-  { name: "varian5", label: "Variasi Konten 5", type: "text", value: "", placeholder: "1350 Diamond + 530 Diamond - Rp.20.000", required: true },
-  { name: "varian6", label: "Variasi Konten 6", type: "text", value: "", placeholder: "1350 Diamond + 530 Diamond - Rp.20.000", required: true },
+  { name: "category", label: "Category", type: "select", value: "", placeholder: "", required: true },
 ];
 
 const createProduct = async () => {

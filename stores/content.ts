@@ -1,17 +1,17 @@
 import { defineStore } from "pinia";
 
-export const productsStore = defineStore("products", {
+export const contentStore = defineStore("content", {
   state: () => ({
-    products: {} as any,
+    content: {} as any,
     status: false,
     message: "",
     oneProduct: {} as any,
   }),
   actions: {
-    async getAllProducts(){
+    async getAllcontent(){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const {data, error} = await useFetch("/rest/v1/products", {
+        const {data, error} = await useFetch("/rest/v1/content", {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -22,11 +22,11 @@ export const productsStore = defineStore("products", {
         
         if(error.value){
           this.status = false;
-          this.message = "Get Products Failed !!!";
+          this.message = "Get content Failed !!!";
         }else if(data){
           this.status = true;
-          this.message = "Get Products successfully";
-          this.products = data.value;
+          this.message = "Get content successfully";
+          this.content = data.value;
         }
       }catch(error){
         console.error(error);
@@ -35,7 +35,7 @@ export const productsStore = defineStore("products", {
     async createProduct(payload: any){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const {data, error} = await useFetch("/rest/v1/products", {
+        const {data, error} = await useFetch("/rest/v1/content", {
           baseURL: baseUrl,
           method: "POST",
           headers: {
@@ -47,11 +47,11 @@ export const productsStore = defineStore("products", {
         
         if(error.value){
           this.status = false;
-          this.message = "Gagal Menambahkan products !!!";
+          this.message = "Gagal Menambahkan content !!!";
         }else if(data){
           this.status = true;
-          this.message = "Berhasil Menambahkan products";
-          this.products = data.value;
+          this.message = "Berhasil Menambahkan content";
+          this.content = data.value;
         }
       }catch(error){
         console.error(error);
@@ -60,7 +60,7 @@ export const productsStore = defineStore("products", {
     async detailProduct(id: number){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const { data, error } = await useFetch(`rest/v1/products?id=eq.${id}`, {
+        const { data, error } = await useFetch(`rest/v1/content?id=eq.${id}`, {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -71,10 +71,10 @@ export const productsStore = defineStore("products", {
 
         if(error.value){
           this.status = false;
-          this.message = "Gagal Menambahkan products !!!";
+          this.message = "Gagal Menambahkan content !!!";
         }else if(data){
           this.status = true;
-          this.message = "Berhasil Menambahkan products";
+          this.message = "Berhasil Menambahkan content";
           this.oneProduct = data.value;
         }
       }catch(error){
@@ -84,7 +84,7 @@ export const productsStore = defineStore("products", {
     async updateProduct(payload: any, id: number){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const {data, error} = await useFetch(`rest/v1/products?id=eq.${id}`, {
+        const {data, error} = await useFetch(`rest/v1/content?id=eq.${id}`, {
           baseURL: baseUrl,
           method: "PATCH",
           headers: {
@@ -97,10 +97,10 @@ export const productsStore = defineStore("products", {
         
         if(error.value){
           this.status = false;
-          this.message = "Update Products Failed !!!";
+          this.message = "Update content Failed !!!";
         }else if(data){
           this.status = true;
-          this.message = "Update Products successfully";
+          this.message = "Update content successfully";
           this.oneProduct = data.value;
         }
       }catch(error){
@@ -110,7 +110,7 @@ export const productsStore = defineStore("products", {
     async filterByIsCart(state: boolean){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const { data, error } = await useFetch(`rest/v1/products?isCart=eq.${state}`, {
+        const { data, error } = await useFetch(`rest/v1/content?isCart=eq.${state}`, {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -121,11 +121,11 @@ export const productsStore = defineStore("products", {
 
         if(error.value){
           this.status = false;
-          this.message = "Gagal Menambahkan products !!!";
+          this.message = "Gagal Menambahkan content !!!";
         }else if(data){
           this.status = true;
-          this.message = "Berhasil Menambahkan products";
-          this.products = data.value;
+          this.message = "Berhasil Menambahkan content";
+          this.content = data.value;
         }
       }catch(error){
         console.error(error);
@@ -134,7 +134,7 @@ export const productsStore = defineStore("products", {
     async filterByCategory(category: string){
       try{
         const { baseUrl, apikey, secretKey } = useAppConfig();
-        const { data, error } = await useFetch(`rest/v1/products?category=eq.${category}`, {
+        const { data, error } = await useFetch(`rest/v1/content?category=eq.${category}`, {
           baseURL: baseUrl,
           method: "GET",
           headers: {
@@ -145,11 +145,11 @@ export const productsStore = defineStore("products", {
 
         if(error.value){
           this.status = false;
-          this.message = "Gagal Menambahkan products dari Genre !!!";
+          this.message = "Gagal Menambahkan content dari Genre !!!";
         }else if(data){
           this.status = true;
-          this.message = "Get Products By Category successfully";
-          this.products = data.value;
+          this.message = "Get content By Category successfully";
+          this.content = data.value;
         }
       }catch(error){
         console.error(error);
@@ -157,4 +157,3 @@ export const productsStore = defineStore("products", {
     }
   }
 })
-
